@@ -2,6 +2,14 @@ import React, { useState, useCallback } from 'react';
 import * as JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 
+/**
+ * demo files
+ * 6.5M PDF
+ * https://gw.alipayobjects.com/mdn/rms_95cbec/afts/img/A*XZCbTK78DIYAAAAAAAAAAAAAARQnAQ
+ * 62.2M Sketch
+ * https://gw.alipayobjects.com/mdn/rms_95cbec/afts/img/A*OuurRLk4tFYAAAAAAAAAAAAAARQnAQ
+ */
+
 const FILE_URL =
   'https://gw.alipayobjects.com/mdn/rms_95cbec/afts/img/A*XZCbTK78DIYAAAAAAAAAAAAAARQnAQ';
 
