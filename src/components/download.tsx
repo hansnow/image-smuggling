@@ -8,6 +8,8 @@ import { saveAs } from 'file-saver';
  * https://gw.alipayobjects.com/mdn/rms_95cbec/afts/img/A*XZCbTK78DIYAAAAAAAAAAAAAARQnAQ
  * 62.2M Sketch
  * https://gw.alipayobjects.com/mdn/rms_95cbec/afts/img/A*OuurRLk4tFYAAAAAAAAAAAAAARQnAQ
+ * 70.4M Keynot
+ * https://gw.alipayobjects.com/mdn/rms_95cbec/afts/img/A*wwcISrVUHK4AAAAAAAAAAAAAARQnAQ
  */
 
 const FILE_URL =

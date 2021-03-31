@@ -12,6 +12,7 @@ module.exports = {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
+    jszip: 'JSZip',
   },
   module: {
     rules: [
