@@ -1,0 +1,34 @@
+{
+  "name": "image-smuggling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansnow/image-smuggling.git"
+  },
+  "keywords": [],
+  "author": "hansnow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hansnow/image-smuggling/issues"
+  },
+  "homepage": "https://github.com/hansnow/image-smuggling#readme",
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "terser-webpack-plugin": "^5.1.1",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.3",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
