@@ -34,4 +34,5 @@ module.exports = {
       inject: 'body',
     }),
   ],
+  devServer: {},
 };
