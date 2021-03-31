@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
   },
   externals: {
     react: 'React',
@@ -27,4 +28,10 @@ module.exports = {
   optimization: {
     minimizer: [new TerserPlugin({ extractComments: false })],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
+      inject: 'body',
+    }),
+  ],
 };
