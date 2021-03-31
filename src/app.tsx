@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Hello from './components/Hello';
+import Download from './components/download';
 
 export default function App() {
-  return <Hello />;
+  return <Download />;
 }
