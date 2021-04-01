@@ -13,7 +13,9 @@ import { saveAs } from 'file-saver';
  */
 
 const FILE_URL =
-  'https://gw.alipayobjects.com/mdn/rms_95cbec/afts/img/A*XZCbTK78DIYAAAAAAAAAAAAAARQnAQ';
+  'https://gw.alipayobjects.com/mdn/rms_95cbec/afts/img/A*OuurRLk4tFYAAAAAAAAAAAAAARQnAQ';
+const fetchController = new AbortController();
+const { signal } = fetchController;
 
 export default function Download() {
   const [file, setFile] = useState(new Uint8Array());
@@ -21,7 +23,7 @@ export default function Download() {
   const [total, setTotal] = useState(0);
   const [unzipProgress, setUnzipProgress] = useState(0);
   const startDownload = useCallback(async () => {
-    const response = await fetch(FILE_URL);
+    const response = await fetch(FILE_URL, { signal });
     const reader = response.body?.getReader();
     const contentLength = +(response.headers.get('content-length') ?? 0);
     setTotal(contentLength);
@@ -32,7 +34,6 @@ export default function Download() {
       }
       setFile((oldFile) => new Uint8Array([...oldFile, ...value]));
       setRecv((oldRecv) => oldRecv + value.length);
-      // console.log(`Received ${value.length}`);
     }
   }, []);
   const unzip = useCallback(async () => {
@@ -45,6 +46,9 @@ export default function Download() {
       });
     });
   }, [file]);
+  const cancelFetch = useCallback(() => {
+    fetchController.abort();
+  }, []);
   return (
     <div>
       <button onClick={startDownload}>download</button>
@@ -54,6 +58,7 @@ export default function Download() {
       <div>download {((recv * 100) / (total || Infinity)).toFixed(2)}%</div>
       <button onClick={unzip}>unzip</button>
       <div>unzip {unzipProgress.toFixed(2)}%</div>
+      <button onClick={cancelFetch}>cancel fetch</button>
     </div>
   );
 }
